@@ -30,8 +30,8 @@ const App = () => {
       </label>
       <div className="output">
         <p>Current Store Values</p>
-        <p>Name- {name}</p>
-        <p>Email- {email}</p>
+        <p>'Name - {name}'</p>
+        <p>'Email - {email}'</p>
       </div>
     </div>
   );
