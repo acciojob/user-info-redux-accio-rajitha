@@ -27,9 +27,11 @@ const App = () => {
         Email:
         <input type="email" value={email} onChange={handleEmailChange} />
       </label>
+      <div className="output">
       <p>Current Store Values</p>
       <p>Name: {name}</p>
       <p>Email: {email}</p>
+      </div>
     </div>
   );
 };
