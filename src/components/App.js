@@ -1,4 +1,44 @@
 // App.js
+// App.js
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { updateName, updateEmail } from "./actions";
+import './../styles/App.css';
+
+const App = () => {
+  const { name, email } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  const handleNameChange = (e) => {
+    dispatch(updateName(e.target.value));
+  };
+
+  const handleEmailChange = (e) => {
+    dispatch(updateEmail(e.target.value));
+  };
+
+  return (
+    <div>
+      <h1>User Information</h1>
+      <label>
+        Name:
+        <input type="text" value={name} onChange={handleNameChange} name="name" />
+      </label>
+      <label>
+        Email:
+        <input type="email" value={email} onChange={handleEmailChange} name="email" />
+      </label>
+      <div className="output">
+        <p>Current Store Values</p>
+        <p>Name: {name}</p>
+        <p>Email: {email}</p>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+/*
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateName, updateEmail } from "./actions";
